@@ -7,6 +7,29 @@
         needed to make our programs work. 
 */
 
+
+/*  🦊  Comparison & Logical Operators give us the ability 
+        to check our values against each other.      
+*/
+let x;
+
+const user = "Bobby";
+
+console.log(x == 5);
+console.log(x == x);
+console.log(user.length > 3);
+
+console.log(x!=5)
+console.log(x===x)
+console.log(x!==x)
+
+console.log(!x);
+console.log(!!x);
+
+
+
+
+
 //  🛖  Create a Variable to hold our answer.
 
 
