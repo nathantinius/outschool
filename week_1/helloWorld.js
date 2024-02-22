@@ -1,3 +1,6 @@
+
+
+
 /*  What we are going to learn: Strings, Variables, Functions */
 
 /*  🦊  Strings are what we call the text elements that we 
