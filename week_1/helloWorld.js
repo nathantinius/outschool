@@ -36,11 +36,17 @@
 //  🛖  Create your const variable and call it "hello"
 const hello = "Hello World!";
 
-console.log(hello);
-
 //  🛖  Create your let variable and call it "name"
-let name;
-name = "Mr Nathan";
-name = "Mr Manticore";
+let myName;
 
-console.log(name);
+
+
+
+
+
+
+
+
+// console.log() is a function that is built in to our machines systems
+console.log(hello);
+console.log(myName);
