@@ -53,27 +53,14 @@ console.log(!!x);
 
 
 
-// Lets think of some new features for our Guessing Game.
+/*  🐼  Our users have a few requests: 
+        
+        Can the game have different difficulty levels?
+        
+        It would be great if our users could challenge
+        each other.
 
+        Our users would like to be able to see thier 
+        past guesses.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  How should we determine points? 
-    Should we even use points?
-*/
-
-/*  Should we have different difficulties? 
-    IE. Easy, Medium, Hard, Impossible 
 */
