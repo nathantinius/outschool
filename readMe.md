@@ -7,8 +7,8 @@ Sammy is going to warn you of things that you should watch out for. If you see S
 ### 🪲 Bugsworth
 As we become better Engineers, Bugsworth is going to start popping up. I am going to give you broken code sometimes and Bugsworth will be there to show you that there is something wrong here. This is where you really want to take a close look at our code. In Engineering we call these mistakes bugs.
 
-### 🐰 Refactor Rebecca
-Rebecca is going to show up where our code can be refactored. Refactoring is where we make our code better. There will be times you write code that works but it took more effort than it needed to. We can use refactoring to reduce the amount of effort and still allow our program to work.
+### 🐼 Penny
+Penny is our Project Manager and she is going to tell us about new features and client requests.
 
 ### 🦊 Fredrick
 Fred is a walking dictionary and he is going to help us understand special vocabulary Engineers use everyday. If you see Fred, get ready to flex your memorization muscles.
