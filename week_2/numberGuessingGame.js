@@ -1,51 +1,38 @@
-//  Lets make a 'Guess the Number' game in Javascript!
+const readline = require("readline");
+let rl = readline.createInterface(process.stdin, process.stdout);
 
-//  Time to get an MVP together
-/*  🦊  MVP = A Minimal Viable Product is the base 
-        of every application you have ever used. It
-        represents the minimum number of components
-        needed to make our programs work. 
-*/
+const myNumber = Math.floor(Math.random() * 10000);
+let pastGuesses = [];
 
+const makeAGuess = () => { 
+        rl.question("What is your guess? ", (guess) => {
+        checkNumber(guess, myNumber);
+        });
+}
 
-/*  🦊  Comparison & Logical Operators give us the ability 
-        to check our values against each other.      
-*/
+function checkNumber(guess, myNumber) {
+        if (guess == myNumber) {
+                console.log("Sweet!")
+                rl.close();
+        } else if (guess > myNumber) {
+                pastGuesses.push(guess)              
+                console.log("Bummer! The number is lower.")
+                console.log("You have already guessed: " + pastGuesses)  
+                makeAGuess();
+        } else {
+                pastGuesses.push(guess)                   
+                console.log("Bummer! The number is higher.")
+                console.log("You have already guessed: " + pastGuesses)
+                makeAGuess();
+        }
+}
 
-/*  🦊  Primative Types tell us what an value IS or what 
-        a variable holds
-*/
-
-let x;
-
-console.log(x==x);
-console.log(x=="hello");
-console.log(x==5);
-console.log(typeof x);
-console.log(typeof 5);
-console.log(typeof "hello");
-
-
-
-
-
-
+makeAGuess();
 
 
 
 
 
-
-
-
-
-
-
-//  🛖  Create a Variable to hold our answer.
-
-//  🛖  Create a function that asks the user for a guess.
-
-//  🛖  Create a check guess function. **Hint use a comparison 
 
 
 
@@ -68,7 +55,7 @@ console.log(typeof "hello");
         It would be great if our users could challenge
         each other.
 
-        Our users would like to be able to see thier 
+        **Our users would like to be able to see thier 
         past guesses.
 
 */
