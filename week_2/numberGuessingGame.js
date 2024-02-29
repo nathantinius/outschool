@@ -11,20 +11,31 @@
 /*  🦊  Comparison & Logical Operators give us the ability 
         to check our values against each other.      
 */
+
+/*  🦊  Primative Types tell us what an value IS or what 
+        a variable holds
+*/
+
 let x;
 
-const user = "Bobby";
+console.log(x==x);
+console.log(x=="hello");
+console.log(x==5);
+console.log(typeof x);
+console.log(typeof 5);
+console.log(typeof "hello");
 
-console.log(x == 5);
-console.log(x == x);
-console.log(user.length > 3);
 
-console.log(x!=5)
-console.log(x===x)
-console.log(x!==x)
 
-console.log(!x);
-console.log(!!x);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,12 +43,9 @@ console.log(!!x);
 
 //  🛖  Create a Variable to hold our answer.
 
-
 //  🛖  Create a function that asks the user for a guess.
 
-
 //  🛖  Create a check guess function. **Hint use a comparison 
-
 
 
 
