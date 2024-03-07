@@ -3,16 +3,15 @@
 
 
 
+
+
+
 /*  What we are going to learn: Strings, Variables, Functions */
 
 /*  🦊  Strings are what we call the text elements that we 
         want to use in Software Engineering */
     
 "Hello!!" // 🚨 Notice the quotation marks >> " "
-
-
-
-
 
 
 
@@ -50,12 +49,20 @@
 //  🛖  Create your const variable and call it "hello"
 const hello = "Hello World!";
 
-//  🛖  Create your let variable and call it "name"
+//  🛖  Create your let variable and call it "myName"
 let myName;
+
 
 // console.log() is a function that is built in to our machines systems
 console.log(hello);
 console.log(myName);
+
+
+
+
+
+
+
 
 
 
