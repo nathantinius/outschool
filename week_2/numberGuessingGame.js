@@ -1,7 +1,7 @@
 const readline = require("readline");
 let rl = readline.createInterface(process.stdin, process.stdout);
 
-const myNumber = Math.floor(Math.random() * 10000);
+const myNumber = Math.floor(Math.random() * 1000000);
 let pastGuesses = [];
 
 const makeAGuess = () => { 
@@ -28,7 +28,6 @@ function checkNumber(guess, myNumber) {
 }
 
 makeAGuess();
-
 
 
 
