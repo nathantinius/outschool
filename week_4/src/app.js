@@ -25,7 +25,6 @@ router.use((req, res, next) => {
 });
 
 /** ROUTES */
-router.use('/api/hello', (req, res) => { res.json({message: "Hello World"})});
 router.use('/api/hp', hitPointRoutes)
 
 router.use((req, res) => {
