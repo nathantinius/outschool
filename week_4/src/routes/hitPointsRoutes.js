@@ -11,36 +11,37 @@ router.get("", (req, res) => {
     });
 })
 
-router.put("/:name", (req, res) => {
-    const actionType = req.body.action
-    const hitPointsValue = req.body.value
-    const damageType = req.body.damageType
+router.put("", (req, res) => {
+    const {name, action, value, damageType} = req.body
 
-    if (actionType == "heal"){
-        BRIV.hitPoints += hitPointsValue;
-    } else if (actionType == "temp") {
-        BRIV.temporaryHitPoints += hitPointsValue;
-    } else if (actionType == "damage") {
-        BRIV.defenses.forEach(defense => {
-            if(defense.type === damageType){
-                if(defense.defense === "immunity"){
-                    BRIV.hitPoints = BRIV.hitPoints
-                } else if (defense.defense === "resistance") {
-                    BRIV.hitPoints -= hitPointsValue / 2
-                } 
-            }
-        });
+    switch (action) {
+        case "heal":
+            BRIV.hitPoints += value;
+            break;
+        case "temp":
+            BRIV.temporaryHitPoints += value;
+            break;
+        case "damage":
+            BRIV.defenses.forEach(defense => {
+                if(defense.type === damageType){
+                    if(defense.defense === "immunity"){
+                        BRIV.hitPoints = BRIV.hitPoints
+                    } else if (defense.defense === "resistance") {
+                        BRIV.hitPoints -= value / 2
+                    } 
+                }
+            });
+
+            console.log(BRIV.hitPoints);
+            console.log(value);
+            BRIV.hitPoints -= value;
 
 
-        //TODO: Remove Damage from temporary hit points first
-        console.log(BRIV.hitPoints);
-        console.log(hitPointsValue);
-        BRIV.hitPoints -= hitPointsValue;
-    } else {
-        return res.status(400).json({message: "I dont know what you are trying to do."})
+            return res.json(BRIV);
+        default:
+            console.error("You didn't use a valid action.")
+            return res.status(400).json({message: "You didn't use a valid action: heal, temp, or damage."})
     }
-
-    return res.json(BRIV);
 })
 
 export default router;
