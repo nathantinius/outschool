@@ -12,6 +12,13 @@
   width: 100%;
 }
 
+.employeeCardList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .redText {
   color: red;
 }
