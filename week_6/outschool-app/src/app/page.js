@@ -1,9 +1,35 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import { TestComponent } from "@/components/TestComponent";
-import { EmployeeCard } from "@/components/EmployeeCard";
+import { PokemonCard } from "@/components/PokemonCard";
+import axios from 'axios';
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [pokemon, setPokemon] = useState();
+
+  const getPokemon = async (pokemonName) => {
+    await axios({
+      method: 'GET',
+      url: `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+    }).then((result) => {
+      console.log(result.data);
+      return setPokemon(result.data);
+    }).catch((error) => {
+      console.log(error);
+      return null
+    }) 
+  }
+
+  useEffect(() => {
+    if (!pokemon) {
+      getPokemon("mewtwo")
+    }
+  }, [])
+
+
   return (
     <div className={styles.main}>
       <div className={styles.horizontal}>
@@ -11,16 +37,26 @@ export default function Home() {
           <h1>Hello World</h1>
         </div>
         <div className={styles.yeah}>
-          <p>YEAH!</p>
+          <p>{!pokemon ? "Yeah" : pokemon.name}</p>
         </div>
       </div>
       <TestComponent />
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        getPokemon(e.target.pokemon.value);
+      }}>
+        <input className={styles.inputField} type="text" id="pokemon" />
+      </form>
       <div className={styles.employeeCardList}>
-        <EmployeeCard employeeName={"Nathan"} title={"Teacher"} email={"nathan@fakeemail.com"} yearsAtCompany={10}/>
-        <EmployeeCard employeeName={"David"} title={"Student"} email={"david@fakeemail.com"} yearsAtCompany={5}/>
-        <EmployeeCard employeeName={"Xavier"} title={"Student"} email={"xavier@fakeemail.com"} yearsAtCompany={4}/>
-        <EmployeeCard employeeName={"George"} title={"Student"} email={"george@fakeemail.com"} yearsAtCompany={7}/>
-        <EmployeeCard employeeName={"Julie"} title={"Substitute Teacher"} email={"julie@fakeemail.com"} yearsAtCompany={1}/>
+        {pokemon ? (
+          <PokemonCard 
+            imageURL={pokemon.sprites.front_default} 
+            pokemonName={pokemon.name} 
+            type={pokemon.types[0].type.name} 
+            favoriteMove={pokemon.moves[0].move.name} 
+            weight={pokemon.weight} 
+          />
+        ) : null}
       </div>
     </div>
   );

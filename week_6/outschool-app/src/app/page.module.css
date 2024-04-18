@@ -23,6 +23,11 @@
   color: red;
 }
 
+.inputField {
+  padding: 10px;
+  font-size: 16px;
+}
+
 .vercelLogo {
   width: 100%;
   aspect-ratio: none;
